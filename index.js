@@ -32,12 +32,31 @@ radios.forEach((radio) => {
 
 quizForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const score = match();
   quizStartSection.style.display = "none";
   //   modalText.textContent = `당신의 점수는 ${score}점입니다!`;
   modalText.style.fontSize = "2em";
   modal.style.display = "block";
+
   animateScore(score);
+  function animateScore(finalScore) {
+    let current = 0;
+    const duration = 4000; // 1초
+    const interval = 30;
+    const increment = Math.ceil(finalScore / (duration / interval));
+    const scoreElement = document.getElementById("modal-text");
+
+    const counter = setInterval(() => {
+      current += increment;
+      if (current >= finalScore) {
+        current = finalScore;
+        clearInterval(counter);
+      }
+      scoreElement.textContent = `당신의 점수는 ${current}점입니다!`;
+    }, interval);
+  }
+
   setTimeout(() => {
     modalInnerP.innerText = `경품 응모 시 스타벅스 커피 증정!`;
 
@@ -51,6 +70,10 @@ quizForm.addEventListener("submit", (e) => {
     <label for="phone">연락처:</label>
     <input type="tel" id="phone" required>
   </div>        
+      <div class="form-group">
+    <label for="mail">이메일:</label>
+    <input type="email" id="mail" required>
+  </div>  
         <button class="submit-btn" type="submit">응모하기</button>
       </form>
     `;
@@ -62,6 +85,7 @@ quizForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("mail").value.trim();
       if (!name) {
         alert("이름을 입력해주세요.");
         return;
@@ -72,11 +96,21 @@ quizForm.addEventListener("submit", (e) => {
         alert("연락처는 숫자만 10~11자리로 입력해주세요.");
         return;
       }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("올바른 이메일 형식이 아닙니다.");
+        return;
+      }
 
       alert("응모가 완료되었습니다!");
       document.getElementById("modal-close-btn").disabled = false;
     });
-  }, 2000);
+  }, 3000);
+});
+
+const modalCloseBtn = document.getElementById("modal-close-btn");
+modalCloseBtn.addEventListener("click", () => {
+  modal.style.display = "none"; // 모달을 숨깁니다.
 });
 
 function match() {
