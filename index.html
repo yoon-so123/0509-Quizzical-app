@@ -7,6 +7,119 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <div class="quiz-container">
+   
+      <section class="quiz-start-section" id="quiz-start-section">
+        <h1 class="main-hone">1960 : 그땐 그랬지</h1>
+        <p class="main-p">그 시절 속으로 출발~!</p>
+        <button id="startBtn" class="start-btn">퀴즈 시작!</button>
+      </section>
+
+      <section class="quiz-main-section" id="quiz-main-section">
+        <form id="quizForm">
+          <div class="question">
+            <p>1. 아침에 먹으면 보약"이라 불렸던 전통 한국 음식은?</p>
+            <label><input id="q1" type="radio" name="q1" value="샐러드" />샐러드</label>
+            <label><input id="q2" type="radio" name="q1" value="2" />설렁탕</label>
+            <label
+              ><input id="q3" type="radio" name="q1" value="부대찌개" />부대찌개</label
+            >
+            <label><input id="q4" type="radio" name="q1" value="마라탕" />마라탕</label>
+          </div>
+          <div class="question">
+            <p>
+              2. 1970~80년대 대표 간식으로, 분홍 종이에 싸서 팔던 추억의 과자는?
+            </p>
+            <label><input id="q5" type="radio" name="q2" value="뻥튀기" />뻥튀기</label>
+            <label
+              ><input id="q6" type="radio" name="q2" value="꿀꽈배기" />꿀꽈배기</label
+            >
+            <label><input id="q7" type="radio" name="q2" value="2" />쫀드기</label>
+            <label><input id="q8" type="radio" name="q2" value="약과" />약과</label>
+          </div>
+          <div class="question">
+            <p>3. ‘고무신 거꾸로 신었다’는 표현은 무슨 의미인가요?</p>
+            <label
+              ><input id="q9" type="radio" name="q3" value="비오는날" />비 오는 날
+              고무신을 잘못 신음</label
+            >
+            <label
+              ><input id="q10" type="radio" name="q3" value="전쟁터" />전쟁터에서
+              도망친다</label
+            >
+
+            <label
+              ><input id="q11" type="radio" name="q3" value="고무신" />고무신 앞코에
+              뒷발꿈치를 구겨넣음</label
+            >
+            <label
+              ><input id="q12" type="radio" name="q3" value="2" />군인이 여자친구에게
+              차임</label
+            >
+          </div>
+
+          <div class="question">
+            <p>4. 다음 중 1980~90년대 인기 광고 속 명대사는?</p>
+            <label
+              ><input id="q13" type="radio" name="q4" value="그건" />“그건 니
+              생각이고~”</label
+            >
+            <label
+              ><input id="q14" type="radio" name="q4" value="밥" />“밥 먹었니?”</label
+            >
+            <label
+              ><input id="q15" type="radio" name="q4" value="2" />“이거 하나면 돼~”
+            </label>
+            <label
+              ><input id="q16" type="radio" name="q4" value="그 시절" />“그 시절, 그
+              느낌”</label
+            >
+          </div>
+
+          <div class="question">
+            <p>5. 드라마 ‘전원일기’의 무대는 어디일까요?</p>
+            <label><input id="q17" type="radio" name="q5" value="2" />농촌</label>
+            <label><input id="q18" type="radio" name="q5" value="서울" />서울</label>
+            <label><input id="q19" type="radio" name="q5" value="바닷가" />바닷가</label>
+            <label><input id="q20" type="radio" name="q5" value="산속" />산속</label>
+          </div>
+          <button id="quiz-btn" class="quiz-btn">결과 보기</button>
+        </form>
+      </section>
+
+
+       <section class="modal" id="modal">
+      <div class="close-modal-btn-container">
+        <button class="modal-close-btn" id="modal-close-btn" disabled>X</button>
+      </div>
+      <div class="modal-inner" id="modal-inner">
+        <h2 id="modal-inner-p">추억 여행, 재밌으셨나요?</h2>
+        <img id="modal-inner-img" src="images/image4.jpg" alt="옛날사진" />
+        <p class="modal-text" id="modal-text"></p>
+        <!-- <form id="consent-form">
+          <input
+            type="text"
+            aria-label="Full name"
+            name="fullName"
+            placeholder="Full Name"
+            required
+          />
+          <input
+            type="email"
+            aria-label="Email address"
+            name="email"
+            placeholder="Email"
+            required
+          /> -->
+          <!-- <div class="modal-choice-btns" id="modal-choice-btns">
+            <button class="modal-btn" type="submit">Accept</button>
+            <button class="modal-btn" type="button" id="decline">
+              Decline
+            </button>
+          </div> -->
+        <!-- </form> -->
+      </div>
+    </section>
     <script src="index.js" type="module"></script>
   </body>
 </html>
